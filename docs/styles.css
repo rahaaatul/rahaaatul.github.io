@@ -1,5 +1,6 @@
 /* styles.css */
 
+/* Set default styles for the entire page */
 body {
     font-family: "Inter", sans-serif;
     margin: 0;
@@ -14,7 +15,8 @@ body {
     height: 100vh;
 }
 
-.login-container {
+/* The profile card container with glass blur effect */
+.profile-card {
     background-color: rgba(255, 255, 255, 0.5); /* Glass blur effect background color */
     backdrop-filter: blur(10px); /* Glass blur effect */
     border-radius: 10px;
@@ -22,8 +24,11 @@ body {
     width: 400px;
     text-align: center;
     padding: 30px;
+    position: relative; /* Add position relative to maintain profile card's position */
+    overflow: hidden; /* Hide any overflow from the child elements */
 }
 
+/* Styles for the circular profile picture container */
 .profile-container {
     width: 100px;
     height: 100px;
@@ -34,6 +39,7 @@ body {
     position: relative;
 }
 
+/* Styles for the circular profile picture */
 .profile-pic {
     width: 100%;
     height: 100%;
@@ -43,16 +49,19 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Styling for the heading */
 h1 {
     font-size: 24px;
 }
 
+/* Styles for the social links container */
 .social-links {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
+/* Styles for the individual social icons */
 .social-icon {
     display: flex;
     align-items: center;
@@ -68,10 +77,130 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
+/* Adjust the font size to make the icon inside bigger */
 .social-icon i {
-    font-size: 18px; /* Adjust the font size to make the icon inside bigger */
+    font-size: 18px;
 }
 
+/* Social icon hover effect */
 .social-icon:hover {
     background-color: #333;
+}
+
+/* Styles for the repositories container with glass blur effect */
+.repositories-container {
+    background-color: rgba(255, 255, 255, 0.5); /* Glass blur effect background color */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none; /* Hide repositories container initially */
+}
+
+/* CSS styles for the transition effect */
+.repositories-container,
+.profile-container {
+    transition: opacity 1s ease;
+}
+
+/* Styles for the "My Repositories" heading */
+.repositories-container h1 {
+    font-size: 24px;
+}
+
+/* Styles for the list of repositories */
+.repository-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Styles for individual list items (repository links) */
+.repository-list li {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background-color: #eff2f6;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+/* Styles for repository links */
+.repository-list li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Hover effect for repository list items */
+.repository-list li:hover {
+    background-color: #d8dee9; /* Modify the color as needed */
+}
+
+/* Styles for the profile card footer (including the button) */
+.profile-card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+/* Styles for the icon button */
+.icon-button {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px; /* Increase the border-radius to create a round button */
+    padding: 12px 24px; /* Adjust padding to provide more space for rounded corners */
+    margin: 10px; /* Remove the margin */
+    transition: background-color 0.3s ease;
+    font-size: 10px;
+}
+
+/* Hover effect for the icon button */
+.icon-button:hover {
+    background-color: #333;
+}
+
+/* Add a class to apply animation for sliding left and fading out */
+.slide-left-fade-out {
+    animation: slideLeftFadeOut 1s forwards;
+}
+
+/* Add a class to apply animation for sliding in from the right and fading in */
+.slide-right-fade-in {
+    animation: slideRightFadeIn 1s forwards;
+}
+
+/* Keyframes for slideLeftFadeOut animation */
+@keyframes slideLeftFadeOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Keyframes for slideRightFadeIn animation */
+@keyframes slideRightFadeIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

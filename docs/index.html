@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mac OS Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Rahatul Ghazi</title>
     <!-- Include Google Fonts stylesheet -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans:400,700|Inter:400,700&display=swap" rel="stylesheet">
     <!-- Include Font Awesome stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Link to main CSS file -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Link to profile CSS file -->
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <!-- Link to repo CSS file -->
+    <link rel="stylesheet" href="assets/css/repo.css">
+    <!-- Link to animation CSS file -->
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <!-- Include the script.js file for JavaScript functionality -->
+    <script src="assets/js/script.js"></script>
 </head>
 <body>
-    <div class="login-container">
-        <div class="profile-container">
-            <div class="profile-pic"></div>
+    <div class="card" id="profile">
+        <div class="profile-picture-container">
+            <div class="profile-picture"></div>
         </div>
         <h1>Rahatul Ghazi</h1>
         <div class="social-links">
@@ -19,10 +28,23 @@
             <a href="https://github.com/rahaaatul" class="social-icon">
                 <i class="fab fa-github"></i> <!-- GitHub icon from Font Awesome -->
             </a>
-                        <!-- Add GitHub link icon using Font Awesome -->
+            <!-- Add Twitter link icon using Font Awesome -->
             <a href="https://twitter.com/rahaaatul" class="social-icon">
-                <i class="fab fa-twitter"></i> <!-- GitHub icon from Font Awesome -->
+                <i class="fab fa-twitter"></i> <!-- Twitter icon from Font Awesome -->
             </a>
+            <div class="button-container"> <!-- Add the button-container class here -->
+                <a href="#" class="icon-button" onclick="showRepositories()">Repositories</a>
+            </div>
+        </div>
+        <!-- Repositories content goes here -->
+        <div class="repositories-container" id="repositories" style="display: none;">
+            <h1>My Repositories</h1>
+            <ul class="repository-list">
+                <li><a href="https://github.com/rahaaatul/Theme-Switcher-for-Windows">Theme Switcher for Windows</a></li>
+                <li><a href="https://github.com/rahaaatul/Graphite-for-Ventoy">Graphite for Ventoy</a></li>
+                <li><a href="#" onclick="showProfile()">Back to Profile</a></li>
+                <!-- Add more repository links as needed -->
+            </ul>
         </div>
     </div>
 </body>

@@ -1,0 +1,39 @@
+/* Set default styles for the entire page */
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/background-image.jpg"); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height instead of height for better responsiveness */
+}
+
+/* Styles for the blur card container with glass blur effect */
+.card {
+    background-color: rgba(255, 255, 255, 0.5); /* Glass blur effect background color */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Use relative width for responsiveness */
+    max-width: 400px; /* Add a max-width to limit the card's width on larger screens */
+    text-align: center;
+    padding: 30px;
+    position: relative; /* Add position relative to maintain profile card's position */
+    overflow: hidden; /* Hide any overflow from the child elements */
+}
+
+/* Adjust styles for smaller screens (phones) */
+@media (max-width: 600px) {
+    .card {
+        width: 95%; /* Increase the width to make the card bigger on smaller screens */
+        max-width: 95%; /* Adjust the max-width to occupy more space on smaller screens */
+        /* Add more adjustments as needed for a better layout on smaller screens */
+    }
+}
+
+/* Other styles specific to .card ... */

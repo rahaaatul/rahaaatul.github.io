@@ -1,0 +1,25 @@
+/* animation.css */
+
+/* Keyframes for slideRightFadeOut animation */
+@keyframes slideRightFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+/* Keyframes for slideLeftFadeIn animation */
+@keyframes slideLeftFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,82 @@
+/* Styles for the circular profile picture container */
+.profile-picture-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #007bff;
+    position: relative;
+}
+
+/* Styles for the circular profile picture */
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/profile-image.jpg"); /* Replace with your profile image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Styling for the heading */
+h1 {
+    font-size: 24px;
+}
+
+/* Styles for the profile card footer (including the button) */
+.profile-card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Styles for the social links container */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Common styles for social icons and icon button */
+.social-icon,
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Combine both transitions */
+
+}
+
+/* Styles for the social icons */
+.social-icon {
+    background-color: #000;
+    border-radius: 15%;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    font-size: 18px;
+}
+
+/* Styles for the icon button */
+.icon-button {
+    display: inline-block;
+    background-color: black;
+    border-radius: 6px;
+    min-width: 100px;
+    margin: 0 5px;
+    padding: 9px 0px;
+    font-size: 14px;
+}
+
+/* Social icon hover effect */
+.social-icon:hover,
+.icon-button:hover {
+    background-color: #333;
+    transform: scale(1.050);
+}
