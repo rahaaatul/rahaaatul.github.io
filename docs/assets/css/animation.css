@@ -48,12 +48,37 @@
   }
 }
 
+/* Define animation for showing the repositories from right to center */
+@keyframes slideInRightRepo {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Define animation for hiding the repositories from center to right */
+@keyframes slideOutCenterRepo {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
 /* Apply the animations to the appropriate elements */
 .card {
   /* Set transition to smoothly animate changes in opacity */
   transition: opacity 0.3s ease-in-out;
 }
 
+/* Styles for hiding the profile container */
 #profile.hidden {
   /* Apply the slideOutCenter animation when the "hidden" class is added */
   animation: slideOutCenter 0.3s ease-in-out;
@@ -63,6 +88,7 @@
   pointer-events: none;
 }
 
+/* Styles for hiding the repositories container */
 #repositories.hidden {
   /* Apply the slideOutRight animation when the "hidden" class is added */
   animation: slideOutRight 0.3s ease-in-out;
@@ -72,11 +98,15 @@
   pointer-events: none;
 }
 
+/* Styles for showing the repositories container */
 #repositories:not(.hidden) {
-  /* Apply the slideInRight animation when the "hidden" class is removed */
-  animation: slideInRight 0.3s ease-in-out;
+  /* Apply the slideInRightRepo animation when the "hidden" class is removed */
+  animation: slideInRightRepo 0.3s ease-in-out;
   /* Ensure the repositories are visible during animation */
   opacity: 1;
   /* Reset pointer-events to allow interaction after animation */
   pointer-events: auto;
 }
+
+/* Rest of the CSS styles... */
+
