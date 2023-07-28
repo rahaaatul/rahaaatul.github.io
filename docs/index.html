@@ -1,6 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add the Content-Security-Policy header with frame-ancestors directive -->
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    
+    <!-- Add other meta tags, title, CSS links, etc. as needed -->
+    
     <title>Rahatul Ghazi</title>
     <!-- Include Google Fonts stylesheet -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans:400,700|Inter:400,700&display=swap" rel="stylesheet">
@@ -14,38 +21,38 @@
     <link rel="stylesheet" href="assets/css/repo.css">
     <!-- Link to animation CSS file -->
     <link rel="stylesheet" href="assets/css/animation.css">
-    <!-- Include the script.js file for JavaScript functionality -->
-    <script src="assets/js/script.js"></script>
 </head>
 <body>
-    <div class="card" id="profile">
-        <div class="profile-picture-container">
-            <div class="profile-picture"></div>
-        </div>
-        <h1>Rahatul Ghazi</h1>
-        <div class="social-links">
-            <!-- Add GitHub link icon using Font Awesome -->
-            <a href="https://github.com/rahaaatul" class="social-icon">
-                <i class="fab fa-github"></i> <!-- GitHub icon from Font Awesome -->
-            </a>
-            <!-- Add Twitter link icon using Font Awesome -->
-            <a href="https://twitter.com/rahaaatul" class="social-icon">
-                <i class="fab fa-twitter"></i> <!-- Twitter icon from Font Awesome -->
-            </a>
-            <div class="button-container"> <!-- Add the button-container class here -->
-                <a href="#" class="icon-button" onclick="showRepositories()">Repositories</a>
+    <div class="card">
+        <div id="profile">
+            <div class="profile-picture-container">
+                <div class="profile-picture"></div>
+            </div>
+            <h1 class="name">Rahatul Ghazi</h1>
+            <div class="social-links">
+                <!-- Add GitHub link icon using Font Awesome -->
+                <a href="https://github.com/rahaaatul" class="social-icon" title="GitHub Profile">
+                    <i class="fab fa-github"></i> <!-- GitHub icon from Font Awesome -->
+                </a>
+                <!-- Add Twitter link icon using Font Awesome -->
+                <a href="https://twitter.com/rahaaatul" class="social-icon" title="Twitter Profile">
+                    <i class="fab fa-twitter"></i> <!-- Twitter icon from Font Awesome -->
+                </a>
+                <!-- The repository button is now a link to the repositories container -->
+                <a href="#repositories" class="icon-button">Repositories</a>
             </div>
         </div>
-        <!-- Repositories content goes here -->
-        <div class="repositories-container" id="repositories" style="display: none;">
+        <div class="repositories-container hidden" id="repositories">
             <h1>My Repositories</h1>
             <ul class="repository-list">
                 <li><a href="https://github.com/rahaaatul/Theme-Switcher-for-Windows">Theme Switcher for Windows</a></li>
                 <li><a href="https://github.com/rahaaatul/Graphite-for-Ventoy">Graphite for Ventoy</a></li>
-                <li><a href="#" onclick="showProfile()">Back to Profile</a></li>
+                <li><a href="#profile">Back to Profile</a></li>
                 <!-- Add more repository links as needed -->
             </ul>
         </div>
     </div>
+    <!-- Include the JavaScript file in your HTML -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

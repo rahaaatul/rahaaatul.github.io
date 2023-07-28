@@ -1,7 +1,5 @@
-/* Styles for the repositories container with glass blur effect */
+/* Use the card class from main.css to style the repositories container */
 .repositories-container {
-    background-color: rgba(255, 255, 255, 0.5); /* Glass blur effect background color */
-    backdrop-filter: blur(10px); /* Glass blur effect */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -12,12 +10,6 @@
     right: 0;
     bottom: 0;
     display: none; /* Hide repositories container initially */
-}
-
-/* CSS styles for the transition effect */
-.repositories-container,
-.profile-container {
-    transition: opacity 1s ease;
 }
 
 /* Styles for the "My Repositories" heading */

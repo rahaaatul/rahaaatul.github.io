@@ -9,6 +9,12 @@
     position: relative;
 }
 
+/* Add a new class to hide the profile picture container */
+.hide-profile-picture {
+    display: none;
+  }
+  
+
 /* Styles for the circular profile picture */
 .profile-picture {
     width: 100%;
