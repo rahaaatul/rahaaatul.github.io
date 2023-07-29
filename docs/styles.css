@@ -1,35 +1,42 @@
-/* styles.css */
+/* main.css */
 
-/* Set default styles for the entire page */
 body {
     font-family: "Inter", sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url("background-image.jpg"); /* Replace with your image path */
+    background-image: url("../images/background-image.jpg"); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height instead of height for better responsiveness */
 }
 
-/* The profile card container with glass blur effect */
-.profile-card {
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*min-height: 100vh; Set the height to 100vh to take up the entire viewport height
     background-color: rgba(255, 255, 255, 0.5); /* Glass blur effect background color */
-    backdrop-filter: blur(10px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     text-align: center;
     padding: 30px;
-    position: relative; /* Add position relative to maintain profile card's position */
-    overflow: hidden; /* Hide any overflow from the child elements */
+    position: relative;
+    overflow: hidden;
 }
 
+/* profile.css */
+
 /* Styles for the circular profile picture container */
-.profile-container {
+.profile-picture-container {
     width: 100px;
     height: 100px;
     margin: 0 auto 20px;
@@ -39,11 +46,17 @@ body {
     position: relative;
 }
 
+/* Add a new class to hide the profile picture container */
+.hide-profile-picture {
+    display: none;
+  }
+  
+
 /* Styles for the circular profile picture */
-.profile-pic {
+.profile-picture {
     width: 100%;
     height: 100%;
-    background-image: url("profile-image.jpg"); /* Replace with your profile image path */
+    background-image: url("../images/profile-image.jpg"); /* Replace with your profile image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -54,6 +67,15 @@ h1 {
     font-size: 24px;
 }
 
+/* Styles for the profile card footer (including the button) */
+.profile-card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
 /* Styles for the social links container */
 .social-links {
     display: flex;
@@ -61,36 +83,51 @@ h1 {
     margin-top: 20px;
 }
 
-/* Styles for the individual social icons */
-.social-icon {
+/* Common styles for social icons and icon button */
+.social-icon,
+.icon-button {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    background-color: #000;
     color: #fff;
     text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Combine both transitions */
+
+}
+
+/* Styles for the social icons */
+.social-icon {
+    background-color: #000;
     border-radius: 15%;
     width: 15px;
     height: 15px;
     margin: 0 5px;
-    transition: background-color 0.3s ease;
-}
-
-/* Adjust the font size to make the icon inside bigger */
-.social-icon i {
     font-size: 18px;
 }
 
-/* Social icon hover effect */
-.social-icon:hover {
-    background-color: #333;
+/* Styles for the icon button */
+.icon-button {
+    display: inline-block;
+    background-color: black;
+    border-radius: 6px;
+    min-width: 100px;
+    margin: 0 5px;
+    padding: 9px 0px;
+    font-size: 14px;
 }
 
-/* Styles for the repositories container with glass blur effect */
+/* Social icon hover effect */
+.social-icon:hover,
+.icon-button:hover {
+    background-color: #333;
+    transform: scale(1.050);
+}
+
+/* repo.css */
+
+/* Use the card class from main.css to style the repositories container */
 .repositories-container {
-    background-color: rgba(255, 255, 255, 0.5); /* Glass blur effect background color */
-    backdrop-filter: blur(10px); /* Glass blur effect */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -101,12 +138,6 @@ h1 {
     right: 0;
     bottom: 0;
     display: none; /* Hide repositories container initially */
-}
-
-/* CSS styles for the transition effect */
-.repositories-container,
-.profile-container {
-    transition: opacity 1s ease;
 }
 
 /* Styles for the "My Repositories" heading */
@@ -143,64 +174,112 @@ h1 {
     background-color: #d8dee9; /* Modify the color as needed */
 }
 
-/* Styles for the profile card footer (including the button) */
-.profile-card-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 10px;
-    width: fit-content;
-}
+/* animation.css */
 
-/* Styles for the icon button */
-.icon-button {
-    display: inline-block;
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px; /* Increase the border-radius to create a round button */
-    padding: 12px 24px; /* Adjust padding to provide more space for rounded corners */
-    margin: 10px; /* Remove the margin */
-    transition: background-color 0.3s ease;
-    font-size: 10px;
-}
-
-/* Hover effect for the icon button */
-.icon-button:hover {
-    background-color: #333;
-}
-
-/* Add a class to apply animation for sliding left and fading out */
-.slide-left-fade-out {
-    animation: slideLeftFadeOut 1s forwards;
-}
-
-/* Add a class to apply animation for sliding in from the right and fading in */
-.slide-right-fade-in {
-    animation: slideRightFadeIn 1s forwards;
-}
-
-/* Keyframes for slideLeftFadeOut animation */
-@keyframes slideLeftFadeOut {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
+/* Define animation for hiding the profile */
+@keyframes slideOutRight {
+    from {
+      opacity: 1;
+      transform: translateX(0);
     }
-    100% {
-        transform: translateX(-100%);
-        opacity: 0;
+    to {
+      opacity: 0;
+      transform: translateX(100%);
     }
-}
-
-/* Keyframes for slideRightFadeIn animation */
-@keyframes slideRightFadeIn {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
+  }
+  
+  /* Define animation for showing the repositories */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
     }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
-}
+  }
+  
+  /* Define animation for sliding profile from left to center */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Define animation for sliding profile from center to left */
+  @keyframes slideOutCenter {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Define animation for showing the repositories from right to center */
+  @keyframes slideInRightRepo {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Define animation for hiding the repositories from center to right */
+  @keyframes slideOutCenterRepo {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Apply the animations to the appropriate elements */
+  .card {
+    /* Set transition to smoothly animate changes in opacity */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Styles for hiding the profile container */
+  #profile.hidden {
+    /* Apply the slideOutCenter animation when the "hidden" class is added */
+    animation: slideOutCenter 0.3s ease-in-out;
+    /* Hide the profile after animation */
+    opacity: 0;
+    /* Make the profile invisible but still occupy space */
+    pointer-events: none;
+  }
+  
+  /* Styles for hiding the repositories container */
+  #repositories.hidden {
+    /* Apply the slideOutRight animation when the "hidden" class is added */
+    animation: slideOutRight 0.3s ease-in-out;
+    /* Hide the repositories after animation */
+    opacity: 0;
+    /* Make the repositories invisible but still occupy space */
+    pointer-events: none;
+  }
+  
+  /* Styles for showing the repositories container */
+  #repositories:not(.hidden) {
+    /* Apply the slideInRightRepo animation when the "hidden" class is removed */
+    animation: slideInRightRepo 0.3s ease-in-out;
+    /* Ensure the repositories are visible during animation */
+    opacity: 1;
+    /* Reset pointer-events to allow interaction after animation */
+    pointer-events: auto;
+  }
