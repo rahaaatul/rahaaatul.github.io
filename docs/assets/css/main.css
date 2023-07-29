@@ -4,7 +4,7 @@ body {
     font-family: "Inter", sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url("../images/background-image.jpg"); /* Replace with your image path */
+    background-color: white;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
